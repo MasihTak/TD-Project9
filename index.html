@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Web App Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="MasihTak">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/css-toggle-switch@latest/dist/toggle-switch.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <!-- ====== Header ======  -->
+  <header>
+    <div class="flex">
+      <h3 class="brand"><b>Your</b><span class="light">App</span><sup>TM</sup></h3>
+      <ul id="user-info">
+        <li class="notification">
+          <div class="circle rounded">
+            <span class="center">3</span>
+          </div>
+          <svg class="nav-icons">
+            <use xlink:href="sprite/sprite.svg#icon-bell" />
+          </svg>
+        </li>
+        <li class="user">
+          <img class="rounded" src="imgs/masihtak.jpg" alt="MasihTak Logo">
+          <span>Masih Abjadi</span>
+        </li>
+      </ul><!-- /info -->
+    </div><!-- /Container -->
+  </header>
+
+  <!-- ====== Sidebar ======  -->
+  <section id="sidebar">
+    <aside>
+      <nav>
+        <ul class="flex">
+          <li class="selected">
+            <a href="#">
+              <svg class="nav-icons">
+                <use xlink:href="sprite/sprite.svg#icon-dashboard" />
+              </svg>
+              <span class="desctop">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <svg class="nav-icons">
+                <use xlink:href="sprite/sprite.svg#icon-members" />
+              </svg>
+              <span class="desctop">Members</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <svg class="nav-icons">
+                <use xlink:href="sprite/sprite.svg#icon-visits" />
+              </svg>
+              <span class="desctop">Visits</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <svg class="nav-icons">
+                <use xlink:href="sprite/sprite.svg#icon-settings" />
+              </svg>
+              <span class="desctop">Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  </section><!-- /left-sidebar -->
+
+  <!-- ====== Notifications  ======  -->
+  <div id="notifications">
+    <div class="alert">
+      <button class="close">&times;</button>
+      <div class="alert-message">
+        <h4>Messages</h4>
+        <p>Victoria Chambers sent you a message.</p>
+      </div>
+      <div class="alert-message">
+        <h4>Alert</h4>
+        <p>The system will down for maintenance at around 2pm.</p>
+      </div>
+      <div class="alert-message">
+        <h4>Info</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== Main Section  ====== -->
+  <section id="main">
+    <div class="container">
+      <div class="main-top clearfix">
+        <div class="tab">
+          <h3>Dashboard</h3>
+        </div>
+        <div id="search">
+          <input type="text" class="search-box" placeholder="Search">
+        </div>
+      </div><!-- /main-top -->
+      <div class="content">
+        <!-- alert -->
+        <div class="alert clearfix">
+          <strong>Alert!</strong> Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit. Curbitur balandit tempus porttitor.
+          <button class="close">&times;</button>
+        </div><!-- /alert -->
+        <div id="traffic" class="card">
+          <div class="flex">
+            <h3 class="uper m-r-a">Trafic</h3>
+            <ul id="filter">
+              <li>Hourly</li>
+              <li>Daily</li>
+              <li class="selected">Weekly</li>
+              <li>Monthly</li>
+            </ul>
+          </div>
+          <div class="chart-container" style="position: relative; height:40vh;">
+            <canvas id="totalTraffic"></canvas>
+          </div>
+        </div><!-- /traffic -->
+        <div class="m-block d-flex">
+          <div id="daily-traffic" class="card grow">
+            <h3 class="uper">Daily Trafiic</h3>
+            <div class="chart-container" style="position: relative; height:40vh;">
+              <canvas id="dailyTraffic"></canvas>
+            </div>
+          </div><!-- /daily traffic -->
+          <div id="mobile-users" class="card grow">
+            <h3 class="uper">Mobile Users</h3>
+            <div class="chart-container" style="position: relative; height:40vh;">
+              <canvas id="mobileUsers"></canvas>
+            </div>
+          </div>
+          <!-- /mobile users -->
+        </div>
+        <!-- ====== Social  ======  -->
+        <section id="social">
+          <h3 class="uper">Social stats</h3>
+          <div class="m-block d-flex">
+            <div class="twitter card d-flex">
+              <svg class="social-icons rounded">
+              <use xlink:href="sprite/sprite.svg#icon-twitter" />
+            </svg>
+              <div class="stat">
+                <h3 class="center">Twitter</h3>
+                <span class="number">10,345</span>
+              </div>
+            </div>
+            <div class="facebook card d-flex">
+              <svg class="social-icons rounded">
+                <use xlink:href="sprite/sprite.svg#icon-facebook" />
+              </svg>
+              <div class="stat">
+                <h3 class="center">Facebook</h3>
+                <span class="number">8,739</span>
+              </div>
+            </div>
+            <div class="google card d-flex">
+              <svg class="social-icons rounded">
+              <use xlink:href="sprite/sprite.svg#icon-google-plus" />
+              </svg>
+              <div class="stat">
+                <h3 class="center">Google +</h3>
+                <span class="number">2,530</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ====== New Members  ======  -->
+        <div class="m-block d-flex">
+          <div id="new-members" class="card grow">
+            <h3 class="uper">New Members</h3>
+            <div class="member">
+              <img class="rounded" src="https://randomuser.me/api/portraits/women/64.jpg" alt="Victoria Chambers">
+              <div class="member-info grow">
+                <p>Victoria Chambers</p>
+                <a href="mailto:victoria@example.com">victoria@example.com</a>
+              </div>
+              <time datetime="2015-10-15 10:00">10/15/15</time>
+            </div>
+            <div class="member">
+              <img class="rounded" src="https://randomuser.me/api/portraits/men/34.jpg" alt="Dale Byrd">
+              <div class="member-info grow">
+                <p>Dale Byrd</p>
+                <a href="mailto:dake.byrd52@example.com">dake.byrd52@example.com</a>
+              </div>
+              <time datetime="2015-10-15 13:00">10/15/15</time>
+            </div>
+            <div class="member">
+              <img class="rounded" src="https://randomuser.me/api/portraits/women/67.jpg" alt="Dawn Wood">
+              <div class="member-info grow">
+                <p>Dawn Wood</p>
+                <a href="mailto:dawn.wood16@example.com">dawn.wood16@example.com</a>
+              </div>
+              <time datetime="2015-10-15 16:00">10/15/15</time>
+            </div>
+            <div class="member">
+              <img class="rounded" src="https://randomuser.me/api/portraits/men/62.jpg" alt="Dan Olive">
+              <div class="member-info grow">
+                <p>Dan Oliver</p>
+                <a href="mailto:dan.oliver82@example.com">dan.oliver82@example.com</a>
+              </div>
+              <time datetime="2015-10-15 20:00">10/15/15</time>
+            </div>
+          </div><!-- /new-member -->
+          <div id="recent-activity" class="card grow">
+            <h3 class="uper">Recent Activity</h3>
+            <div class="member">
+              <img class="rounded" src="https://randomuser.me/api/portraits/women/64.jpg" alt="Victoria Chambers">
+              <div class="member-info grow">
+                <p>Victoria Chambers commented on YourApp's SEO Tips</p>
+                <span>4 hours ago</span>
+              </div>
+              <span class="arrow">&sc;</span>
+            </div>
+            <div class="member">
+              <img class="rounded" src="https://randomuser.me/api/portraits/men/34.jpg" alt="Dale Byrd">
+              <div class="member-info grow">
+                <p>Dale Byrd like the post Facebook's Changes for 2016</p>
+                <span>5 hours ago</span>
+              </div>
+              <span class="arrow">&sc;</span>
+            </div>
+            <div class="member">
+              <img class="rounded" src="https://randomuser.me/api/portraits/women/67.jpg" alt="Dawn Wood">
+              <div class="member-info grow">
+                <p>Dawn Wood commented on Facebook's Changes for 2016</p>
+                <span>5 hours ago</span>
+              </div>
+              <span class="arrow">&sc;</span>
+            </div>
+            <div class="member">
+              <img class="rounded" src="https://randomuser.me/api/portraits/men/62.jpg" alt="Dan Olive">
+              <div class="member-info grow">
+                <p>Dan Oliver posted YourApp's SEO Tips</p>
+                <span>1 hours ago</span>
+              </div>
+              <span class="arrow">&sc;</span>
+            </div>
+          </div><!-- /recent-activity -->
+        </div>
+        <!-- ====== Message Users ======  -->
+        <div class="m-block d-flex">
+          <div id="message-users" class="card grow">
+            <h3 class="uper">Message Users</h3>
+            <form>
+              <input id="search-user" name="search-user" type="text" placeholder="Search for User">
+              <datalist id="autocompleate"></datalist>
+              <textarea id="message-user" name="message-user" rows="8" placeholder="Message for user"></textarea>
+              <button id="send" type="submit" class="button">Send</button>
+            </form>
+          </div><!-- message-users -->
+          <!-- ====== Settings ======  -->
+          <div id="settings" class="card grow">
+            <h3 class="uper">Settings</h3>
+            <label class="switch-light switch-ios" onclick="">
+              <input id="emailNotification" type="checkbox">
+              <strong class="grow">Send Email Notification</strong>
+              <span>
+                <span>Off</span>
+                <span>On</span>
+                <a></a>
+              </span>
+            </label>
+            <label class="switch-light switch-ios" onclick="">
+              <input id="publicProfile" type="checkbox">
+              <strong class="grow">Set Profile to Public</strong>
+              <span>
+                <span>Off</span>
+                <span>On</span>
+                <a></a>
+              </span>
+            </label>
+            <div class="timezone">
+              <select class="settings-timezone">
+                <option id="default" value="" disabled="" selected="">Select Timezone</option>
+                <option>(GMT-12:00) International Date Line West</option>
+                <option>(GMT-11:00) Midway Island, Samoa</option>
+                <option>(GMT-10:00) Hawaii</option>
+                <option>(GMT-09:00) Alaska</option>
+                <option>(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+                <option>(GMT-08:00) Tijuana, Baja California</option>
+                <option>(GMT-07:00) Arizona</option>
+                <option>(GMT-07:00) Chihuahua, La Paz, Mazatlan</option>
+                <option>(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+                <option>(GMT-06:00) Central America</option>
+                <option>(GMT-06:00) Central Time (US &amp; Canada)</option>
+                <option>(GMT-06:00) Guadalajara, Mexico City, Monterrey</option>
+                <option>(GMT-06:00) Saskatchewan</option>
+                <option>(GMT-05:00) Bogota, Lima, Quito, Rio Branco</option>
+                <option>(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+                <option>(GMT-05:00) Indiana (East)</option>
+                <option>(GMT-04:00) Atlantic Time (Canada)</option>
+                <option>(GMT-04:00) Caracas, La Paz</option>
+                <option>(GMT-04:00) Manaus</option>
+                <option>(GMT-04:00) Santiago</option>
+                <option>(GMT-03:30) Newfoundland</option>
+                <option>(GMT-03:00) Brasilia</option>
+                <option>(GMT-03:00) Buenos Aires, Georgetown</option>
+                <option>(GMT-03:00) Greenland</option>
+                <option>(GMT-03:00) Montevideo</option>
+                <option>(GMT-02:00) Mid-Atlantic</option>
+                <option>(GMT-01:00) Cape Verde Is.</option>
+                <option>(GMT-01:00) Azores</option>
+                <option>(GMT+00:00) Casablanca, Monrovia, Reykjavik</option>
+                <option>(GMT+00:00) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London</option>
+                <option>(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</option>
+                <option>(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</option>
+                <option>(GMT+01:00) Brussels, Copenhagen, Madrid, Paris</option>
+                <option>(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb</option>
+                <option>(GMT+01:00) West Central Africa</option>
+                <option>(GMT+02:00) Amman</option>
+                <option>(GMT+02:00) Athens, Bucharest, Istanbul</option>
+                <option>(GMT+02:00) Beirut</option>
+                <option>(GMT+02:00) Cairo</option>
+                <option>(GMT+02:00) Harare, Pretoria</option>
+                <option>(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius</option>
+                <option>(GMT+02:00) Jerusalem</option>
+                <option>(GMT+02:00) Minsk</option>
+                <option>(GMT+02:00) Windhoek</option>
+                <option>(GMT+03:00) Kuwait, Riyadh, Baghdad</option>
+                <option>(GMT+03:00) Moscow, St. Petersburg, Volgograd</option>
+                <option>(GMT+03:00) Nairobi</option>
+                <option>(GMT+03:00) Tbilisi</option>
+                <option>(GMT+03:30) Tehran</option>
+                <option>(GMT+04:00) Abu Dhabi, Muscat</option>
+                <option>(GMT+04:00) Baku</option>
+                <option>(GMT+04:00) Yerevan</option>
+                <option>(GMT+04:30) Kabul</option>
+                <option>(GMT+05:00) Yekaterinburg</option>
+                <option>(GMT+05:00) Islamabad, Karachi, Tashkent</option>
+                <option>(GMT+05:30) Sri Jayawardenapura</option>
+                <option>(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi</option>
+                <option>(GMT+05:45) Kathmandu</option>
+                <option>(GMT+06:00) Almaty, Novosibirsk</option>
+                <option>(GMT+06:00) Astana, Dhaka</option>
+                <option>(GMT+06:30) Yangon (Rangoon)</option>
+                <option>(GMT+07:00) Bangkok, Hanoi, Jakarta</option>
+                <option>(GMT+07:00) Krasnoyarsk</option>
+                <option>(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi</option>
+                <option>(GMT+08:00) Kuala Lumpur, Singapore</option>
+                <option>(GMT+08:00) Irkutsk, Ulaan Bataar</option>
+                <option>(GMT+08:00) Perth</option>
+                <option>(GMT+08:00) Taipei</option>
+                <option>(GMT+09:00) Osaka, Sapporo, Tokyo</option>
+                <option>(GMT+09:00) Seoul</option>
+                <option>(GMT+09:00) Yakutsk</option>
+                <option>(GMT+09:30) Adelaide</option>
+                <option>(GMT+09:30) Darwin</option>
+                <option>(GMT+10:00) Brisbane</option>
+                <option>(GMT+10:00) Canberra, Melbourne, Sydney</option>
+                <option>(GMT+10:00) Hobart</option>
+                <option>(GMT+10:00) Guam, Port Moresby</option>
+                <option>(GMT+10:00) Vladivostok</option>
+                <option>(GMT+11:00) Magadan, Solomon Is., New Caledonia</option>
+                <option>(GMT+12:00) Auckland, Wellington</option>
+                <option>(GMT+12:00) Fiji, Kamchatka, Marshall Is.</option>
+                <option>(GMT+13:00) Nuku'alofa</option>
+              </select>
+            </div>
+            <div class="m-block d-flex">
+              <button id="save" class="button">Save</button>
+              <button class="button cancel">Cancel</button>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <p> &copy; 2018 MasihTak</p>
+        </footer>
+      </div><!-- /content -->
+    </div><!-- /container -->
+  </section><!-- /main -->
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script type="text/javascript" src="js/localstorage.js"></script>
+</body>
+
+</html>
