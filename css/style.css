@@ -210,7 +210,7 @@ header {
 .nav-icons {
     width: 32px;
     height: 32px;
-    fill: white;
+    fill: #FFF;
 }
 
 /*** Notification ***/
@@ -329,7 +329,7 @@ nav a {
 }
 
 .tab h3 {
-    font-size: .tab h3;
+    font-size: 1.4em;
 }
 
 /* search box */
